@@ -1,0 +1,19 @@
+{
+  "name": "productos-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "API REST de productos para una tienda con Node.js y PostgreSQL",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "db:init": "node src/init-db.js"
+  },
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1"
+  }
+}
+
