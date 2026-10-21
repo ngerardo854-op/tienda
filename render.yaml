@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: tienda-productos-api
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: tienda-productos-db
+          property: connectionString
+
+databases:
+  - name: tienda-productos-db
+    databaseName: tienda
+    user: tienda
+    plan: free
+    postgresMajorVersion: "16"
+
